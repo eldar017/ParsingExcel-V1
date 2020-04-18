@@ -87,8 +87,10 @@ def callback(ch, method, properties, body):
                                 datetime_date = xlrd.xldate_as_datetime(e, 0)
                                 date_object = datetime_date.date()
                                 string_date = date_object.isoformat()
+                                date_time_originl = datetime.datetime.strptime(string_date, '%Y-%d-%m')
+                                date_time_convert = datetime.date.strftime(date_time_originl, "%d/%m/%y")
                                 #print(string_date)
-                                ws.cell(row=row_idx + 1, column=col_idx + 1).value = string_date
+                                ws.cell(row=row_idx + 1, column=col_idx + 1).value = date_time_convert
                         except:
                             continue
 
