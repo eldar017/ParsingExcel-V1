@@ -236,9 +236,7 @@ def callback(ch, method, properties, body):
                             message_format = {"userId": userId, "base64buffer": base64_message, "curr_date": curr_date,
                                               "fileName": fileName}
                             message = json.dumps(message_format)
-                            print(message)
                             publisher.sender(message)
-                            #print("send message to sender function")
 
                     elif match3.value!=None:
                         print("VISA")
@@ -412,7 +410,7 @@ def callback(ch, method, properties, body):
                             message = json.dumps(message_format)
                             publisher.sender(message)
 
-                    if match3.value==None:
+                    elif match3.value==None:
                         #match3.value==None:
                         print("VISA")
                         wb1.delete_cols(3)
