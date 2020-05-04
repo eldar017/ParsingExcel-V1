@@ -10,8 +10,8 @@ username = 'user'
 password = 'password'
 queue_name = 'hello'
 exchange_name = 'Eldar'
-rk = 'eldar'
-rk_err  = 'error'
+rk = 'yogev'
+rk_err = 'error'
 
 def sender(message):
     credentials = pika.PlainCredentials(username=username, password=password)
@@ -19,24 +19,17 @@ def sender(message):
         pika.ConnectionParameters(host=rabbit_IP, port=rabbit_port, credentials=credentials))
     channel = connection.channel()
 
-    channel.queue_declare(queue=queue_name, durable=False)
-    counter = 1
-
-
     channel.basic_publish(exchange=exchange_name,
                           routing_key=rk,
                           body=message)
-    print('send succuesfuly to yoge rk')
+    print('successful sending message to ALGO')
 
 def sender_err(message):
+    #print(message)
     credentials = pika.PlainCredentials(username=username, password=password)
     connection = pika.BlockingConnection(
         pika.ConnectionParameters(host=rabbit_IP, port=rabbit_port, credentials=credentials))
     channel = connection.channel()
-
-    channel.queue_declare(queue=queue_name, durable=False)
-    counter = 1
-
 
     channel.basic_publish(exchange=exchange_name,
                           routing_key=rk_err,
