@@ -23,48 +23,7 @@ channel = connection.channel()
 def callback(ch, method, properties, body):
     print(" [x] Received %r" % body)
     ExcelParsing.Object.file_extension(body)
-    # excel = body
-    # excel_dict = json.loads(excel)
-    # print (excel_dict)
-    # file_extension = excel_dict["fileName"]
-    # userId = excel_dict["userId"]
-    # filename = excel_dict["fileName"]
-    # curr_date = excel_dict["curr_date"]
-    #
-    # print(userId)
-    # print(filename)
-    # print(curr_date)
-
-    # if str(file_extension).split(".")[1] =='xlsx':
-    #     print('excel format : xlsx')
-    # else:
-    #     print("dddddd")
-    # if str(file_extension).split(".")[1] =='xls':
-    #     print('excel format : xls')
-    # else:
-    #     print("dddddd")
-    # # if "fileName" in excel_dict:
-    # #     file_extension = excel_dict["fileName"]
-    # #     print(file_extension)
-    # #     print(str(file_extension).split(".")[1])
-    # # else:
-    # #     print('STAM')
-    #
-    #
-    # if "base64buffer" in excel_dict:
-    #     encoding_data = excel_dict["base64buffer"]
-    #     print(encoding_data)
-    #     decoded_data = base64.b64decode(encoding_data)
-    #     xls_filelike = io.BytesIO(decoded_data)
-    #     workbook = openpyxl.load_workbook(xls_filelike)
-    #     data = workbook
-    #     #parser.read_file(data)
-    #     workbook.save(filename="C:\OM\Yogev99110.xlsx")
-    #
-    #
-    # else:
-    #     print('Cannot parsing json from rabbit')
-
+    
 
 while(True):
     try:
