@@ -1,4 +1,4 @@
-FROM python:3.6-slim-stretch
+FROM python:3.10.0rc1-slim
 ADD ParsingExcelDocker.py /
 ADD publisher.py /
 RUN pip install xlrd
