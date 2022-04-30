@@ -23,6 +23,6 @@ jobs:
     - name: Build the Docker image
       run: |
         cd ParsingExcel-V1
-        docker build . --file Dockerfile --tag eldar017/docker/python-parser-v1:$(date +%s)
+        docker build . --file Dockerfile --tag eldar017/docker/python-parser-v1:0.0.1
         docker images
-        docker push eldar017/docker/python-parser-v1:latest
+        docker push eldar017/docker/python-parser-v1:0.0.1
