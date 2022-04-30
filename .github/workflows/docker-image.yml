@@ -24,7 +24,6 @@ jobs:
       run: |
         cd ParsingExcel-V1
         docker build . --file Dockerfile --tag python-parser-v1:$(date +%s)
-        docker push
 
     - name: Extract metadata (tags, labels) for Docker
       id: meta
