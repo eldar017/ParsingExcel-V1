@@ -24,6 +24,4 @@ jobs:
       run: |
         cd ParsingExcel-V1
         docker build . --file Dockerfile --tag eldar017/docker/python-parser-v1:0.0.1
-        docker images
-        docker login -u "eldar017" -p "991b5fef-f8f7-4f9f-b8e3-f1a15458fbe1" docker.io
         docker push eldar017/docker/python-parser-v1:0.0.1
