@@ -25,6 +25,7 @@ jobs:
         cd ParsingExcel-V1
         docker build . --file Dockerfile --tag eldar017/docker/python-parser-v1:0.0.1
         docker tag eldar017/docker/python-parser-v1:0.0.1 eldar017/docker/python-parser-v1:0.0.2
+        docker images ls
         docker push eldar017/docker/python-parser-v1:0.0.2
 #    - name: Build and push
 #      uses: docker/build-push-action@v2
